@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 30% 6%;
+    --foreground: 40 20% 90%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 40 20% 90%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 40 20% 90%;
+
+    --primary: 40 60% 50%;
+    --primary-foreground: 220 30% 6%;
+
+    --secondary: 220 20% 14%;
+    --secondary-foreground: 40 20% 90%;
+
+    --muted: 220 20% 14%;
+    --muted-foreground: 220 10% 55%;
+
+    --accent: 40 60% 50%;
+    --accent-foreground: 220 30% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 40 60% 50%;
+
+    --radius: 0.25rem;
+
+    --gold: 40 60% 50%;
+    --gold-light: 40 50% 65%;
+    --navy: 220 30% 6%;
+    --navy-light: 220 25% 12%;
+  }
+
+  .light {
+    --background: 40 20% 96%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 10%;
+
+    --primary: 40 60% 42%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 40 15% 90%;
+    --secondary-foreground: 220 30% 10%;
+
+    --muted: 40 10% 90%;
+    --muted-foreground: 220 10% 40%;
+
+    --accent: 40 60% 42%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 40 15% 85%;
+    --input: 40 15% 85%;
+    --ring: 40 60% 42%;
+
+    --gold: 40 60% 42%;
+    --gold-light: 40 50% 55%;
+    --navy: 220 30% 6%;
+    --navy-light: 40 15% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: hsl(var(--gold));
+  }
+  .bg-navy-light {
+    background-color: hsl(var(--navy-light));
+  }
+  .border-gold {
+    border-color: hsl(var(--gold));
+  }
+  .gold-gradient {
+    background: linear-gradient(135deg, hsl(40 60% 50%), hsl(40 50% 65%));
+  }
+  .text-gradient-gold {
+    background: linear-gradient(135deg, hsl(40 60% 50%), hsl(40 50% 65%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
